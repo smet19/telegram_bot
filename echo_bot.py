@@ -65,7 +65,7 @@ def handle_photo(message):
     img_url = f"https://{BUCKET_NAME}.s3.amazonaws.com/uploads/{img_id}.jpg"
 
     data = {"img_url": img_url, "img_id": img_id}
-    url = 'http://pikachu-back:5000/v1/predict'
+    url = 'http://pikachu:5000/v1/predict'
     response = requests.post(url, json=data)
     response_json = response.json()
     print(response_json)
